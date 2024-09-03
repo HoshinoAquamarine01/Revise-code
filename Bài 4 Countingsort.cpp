@@ -26,6 +26,9 @@ int main (){
    for(int i=0 ; i<n;i++){
         
         cin>>data[i].first>>data[i].second ;
+       if (i < n / 2) {
+            data[i].second = "-";
+        }
     }
     
     vector <int> position (101,0);
