@@ -14,6 +14,9 @@ int main (){
     for(int i=0 ; i<n;i++){
         
         cin>>data[i].first>>data[i].second ;
+         if (i < n / 2) {
+            data[i].second = "-";
+        }
     }
      stable_sort(data.begin(), data.end(), [](const pair<int, string>& a, const pair<int, string>& b) {
         return a.first < b.first;  
