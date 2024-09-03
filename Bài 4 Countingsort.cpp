@@ -22,4 +22,33 @@ int main (){
         cout << p.first << " " << p.second << endl;
     }
    ***/
-// Cách 2 sẽ cập nhật sau
+// Cách 2 
+   for(int i=0 ; i<n;i++){
+        
+        cin>>data[i].first>>data[i].second ;
+    }
+    
+    vector <int> position (101,0);
+    vector <int> count (101,0) ;
+    
+    for (const auto &pair : data){
+        count[pair.first]++; 
+    }
+    
+    for (int i=1 ; i<=100 ;i++){
+        position[i] = position[i-1] + count[i - 1];
+    }
+    
+    vector<pair<int , string>> result(n) ;
+    
+    for (const auto & pair : data){
+        result[position[pair.first]++] = pair ;
+    }
+    
+    for (const auto &pair : result){
+        cout<<pair.first<<" " << pair.second<<endl;
+    }
+    
+    return 0 ;
+    }
+      
