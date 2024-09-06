@@ -1,0 +1,96 @@
+Bài tập Set - Multiset - Unordered_set - Map - Multimap - Unordered_map
+
+Bài 1 : Nhập vào 1 chuỗi xuất ra tần số của kí tự ( phân biệt kí tụ thường và kí tự in hoa) theo dạng kí tự - tần suất 
+Ví dụ :
+Input : aabbccABBCCD
+Output : a - 2 , b - 2 , c - 2 , A - 1 , B -2 , C - 2 , D - 1 
+
+Bài 2 : Nhập vào 1 mảng gồm N phần tử và xuất ra số lần xuất hiện từ trên xuống thấp ( nếu bằng nhau số lần thì cũng sắp từ trên xuống thấp)
+Ví dụ 
+Input :
+10
+1 3 3 1 1 5 9 5 5 7
+Output : 5 1 3 9 7
+
+Bài 3 : Nhập vào 1 mảng gồm N phần tử và 2 số M , K . Tìm vị trí đầu tiên của M và K trong mảng ( nếu không có xuất không có )
+Ví dụ : 
+Input : 
+8 9 6
+7 3 4 5 1 2 9 9
+Output :
+6 
+Không có 
+
+Bài 4 : Cho một danh sách các học sinh và điểm số của họ, tìm học sinh có điểm cao nhất.
+Ví dụ :
+Input :
+5
+Alice 90
+Bob 85
+Charlie 95
+David 80
+Eve 95
+Output :
+Charlie co diem cao nhat: 95
+Eve co diem cao nhat: 95
+
+Bài 5 : Nhập vào N phần tử (N là số chẵn và N >=4) mỗi 2 số là 1 cặp và số K . Xuất ra các cặp có tổng bằng K nếu ko có thì xuất không có
+Ví dụ
+Input :
+8 6
+1 4 2 5 3 3 0 6 
+Output :
+(3,3) 
+(0,6)
+
+Bài 6 : Nhập N ngày có doanh thu X . Tìm ngày có doanh thu cao nhất 
+Ví dụ :
+Input :
+6
+100 200 900 450 750 340
+Output :
+Ngày có doanh thu cao nhất là 3 
+
+Bài 7 : Nhập mảng gồm N phần tử . Xuất các số có số lần xuất hiện lớn hơn 1 
+Ví dụ :
+Input :
+10
+4 5 6 7 4 5 8 9 4 5
+Output :
+4 xuat hien 3 lan
+5 xuat hien 3 lan
+
+Bài 8 : Nhập vào một dãy các từ và đếm số lần xuất hiện của mỗi từ, sau đó in ra từ có số lần xuất hiện nhiều nhất.
+Ví dụ :
+Input : 
+7
+apple banana apple orange banana apple apple
+Output : 
+apple xuat hien nhieu nhat: 4 lan
+
+Bài 9 : Bạn có một danh sách các giao dịch ngân hàng với số tiền và loại giao dịch (nạp, rút). Hãy tính số dư cuối cùng của tài khoản và tìm giao dịch lớn nhất theo từng loại.
+Ví dụ :
+Input :
+7
+nap 500
+rut 200
+nap 300
+rut 100
+nap 400
+rut 300
+nap 100
+Output :
+So du cuoi cung: 700
+Giao dich nap lon nhat: 500
+Giao dich rut lon nhat: 300
+
+Bài 10 : Cho một dãy các từ, tìm các từ là từ đảo ngược của nhau .
+Ví dụ :
+Input :
+6
+abc cba def fed ghi ijk
+Output :
+(abc, cba)
+(def, fed)
+
+
