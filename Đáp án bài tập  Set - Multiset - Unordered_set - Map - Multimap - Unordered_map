@@ -1,0 +1,80 @@
+Đáp án bài tập  Set - Multiset - Unordered_set - Map - Multimap - Unordered_map
+Bài 1 :
+#include <iostream>
+#include <set>
+#include <map>
+
+using namespace std ;
+
+int main (){
+    
+    ios_base::sync_with_stdio(false);
+    
+    string s ;
+    
+    cin>>s ;
+    
+    map<char, int> mp ;
+    
+    int count = 0 ;
+    
+    for (int i = 0  ; i < s.size()  ; i++){
+        
+        mp[s[i]]++ ;
+    }
+    
+    for (pair<char , int> it : mp){
+        
+        cout << it.first <<" - " << it.second;
+        
+        count++;
+        if (count < mp.size()){
+            
+            cout<<" ," ;
+        }
+    }
+}
+
+Bài 2 : 
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <algorithm> 
+
+using namespace std ;
+
+int main (){
+    
+    ios_base::sync_with_stdio(false);
+    
+    int N ;
+    
+    cin>> N ;
+    
+    int arr[N];
+    
+    for (int i = 0  ; i < N ; i++){
+        cin>>arr[i]  ; 
+    }
+    
+    map<int, int> mp ;
+    
+    for (int i = 0  ; i < N  ; i++){
+        
+        mp[arr[i]]++ ;
+    }
+    
+    vector <pair <int , int>> vec (mp.begin() , mp.end());
+    
+    sort(vec.begin() , vec.end() , [] (const pair<int , int> &a , const pair <int , int> &b){
+        if (a.second !=b.second)
+            return a.second > b.second;
+        return a.first > b.first;
+    }) ;
+    
+    for (auto res : vec){
+        cout <<res.first<<" ";
+    }
+}
+
