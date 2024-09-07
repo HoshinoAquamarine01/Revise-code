@@ -210,3 +210,262 @@ int main (){
     }
     return 0 ;
 }
+
+Bài 6 : 
+#include <iostream>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <vector>
+#include <unordered_set>
+
+using namespace std ;
+
+int main()
+{
+    ios_base::sync_with_stdio(false); 
+    
+    int N ;
+    
+    cin>>N;
+    
+    int arr[N];
+    
+    for (int i = 0 ; i < N ; i++){
+        cin>>arr[i];
+    }
+
+    int count = 0 ;
+    
+    unordered_set <int> se ;
+    
+    for (int i = 0 ; i< N ; i++){
+        se.insert(arr[i]);
+    }
+    
+    int max = 0 ;
+    
+   for (int x : se){
+        if (x > max){
+            max = x ;
+            count++ ;
+        }
+    }
+
+    
+    cout <<"Ngay co doanh thu cao nhat la "<< count ;
+    
+    return 0 ;
+ 
+}
+
+Bài 7 :
+#include <iostream>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+
+using namespace std ;
+
+int main()
+{
+    ios_base::sync_with_stdio(false); 
+    
+    int N ;
+    
+    cin>>N;
+    
+    int arr[N];
+    
+    for (int i = 0 ; i < N ; i++){
+        cin>>arr[i];
+    }
+
+    map<int , int> mp;
+    
+    for (int i = 0 ; i < N ; i++){
+        mp[arr[i]]++;
+    }
+    
+    for (pair <int , int> it : mp){
+        
+        if (it.second > 1)
+          cout <<it.first<<" xuat hien "<<it.second<<" lan"<<"\n";
+    }
+    
+    return 0 ;
+ 
+}
+
+Bài 8 : 
+#include <iostream>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+#include <sstream>
+
+using namespace std ;
+
+int main()
+{
+    ios_base::sync_with_stdio(false); 
+    
+    int N ;
+    
+    cin>>N;
+    
+    string s ;
+    
+    getline(cin,s);
+    
+    string word;
+    
+    map <string , int> mp ;
+    
+    stringstream ss(s);
+    
+    while (ss>>word){
+        
+        mp[word]++ ;
+    }
+    
+    int max = 0 ;
+    
+    for (pair <string ,int> it : mp){
+        if (it.second > max)
+          max = it.second ;
+    }
+    
+    for (pair <string,int> it : mp){
+        if (it.second == max)
+          cout<<it.first<<" xuat hien nhieu nhat : "<<max<<" lan" ;
+    }
+    
+    return 0 ;
+ 
+}
+
+Bài 9 : 
+#include <iostream>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+#include <sstream>
+
+using namespace std ;
+
+int main()
+{
+    ios_base::sync_with_stdio(false); 
+    
+    int N ;
+    
+    cin>>N;
+    
+    unordered_map <string , int > sum ;
+    
+    unordered_map <string , int> max ; 
+    
+    sum["nap"] = 0 ;
+    sum["rut"] = 0 ;
+    max["rut"] = 0 ;
+    max["nap"] = 0 ;
+    
+    for (int i = 0 ; i < N ; i++){
+        string s ;
+        int money ;
+        
+        cin>>s >>money ;
+        
+        sum[s] += money ;
+        
+        if (money > max[s]){
+            max[s] = money ;
+        }
+        
+    }
+    
+    int tong = sum["nap"] - sum["rut"]; 
+    
+    cout << "so du cuoi cung: "<<tong<<"\n";
+    
+    cout << "Giao dich nap lon nhat: "<<max["nap"]<<"\n";
+    
+    cout << "Giao dich rut lon nhat: "<<max["rut"];
+    
+    return 0 ;
+ 
+}
+
+Bài 10 : 
+#include <iostream>
+#include <map>
+#include <set>
+#include <algorithm>
+#include <vector>
+#include <unordered_set>
+#include <unordered_map>
+#include <sstream>
+
+using namespace std ;
+
+string daochuoi (string s ){
+    string reversed = s;
+    reverse(reversed.begin(), reversed.end());
+    return reversed;
+
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false); 
+    
+    cin.tie(0);
+    
+    int N ;
+    
+    cin>>N;
+    
+    cin.ignore() ;
+    
+    string s ;
+
+    getline(cin,s);
+    
+    stringstream ss (s) ;
+    
+    set<string> se ;
+    
+    string word ;
+    
+    while (ss >> word ){
+        
+        se.insert(word);
+    }
+    
+   for (auto it = se.begin(); it != se.end();){
+       string daonguoc = daochuoi (*it);
+       
+       auto found  = se.find(daonguoc) ; 
+       
+       if (found != se.end() && *it != daonguoc) {
+            cout << "(" << *it << ", " << daonguoc << ")" << "\n";
+            se.erase(found);   
+            it = se.erase(it);
+        } else {
+            ++it; 
+        }
+   }
+    
+    return 0 ;
+ 
+}
