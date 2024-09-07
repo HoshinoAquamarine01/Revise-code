@@ -40,8 +40,8 @@ Input :
 8 6
 1 4 2 5 3 3 0 6 
 Output :
-(3,3) 
 (0,6)
+(3,3)
 
 Bài 6 : Nhập N ngày có doanh thu X . Tìm ngày có doanh thu cao nhất 
 Ví dụ :
