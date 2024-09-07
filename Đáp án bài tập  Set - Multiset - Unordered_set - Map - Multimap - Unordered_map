@@ -78,3 +78,135 @@ int main (){
     }
 }
 
+Bài 3 :
+#include <iostream>
+#include <set>
+
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+
+    int n, M, K; cin >> n >> M >> K;
+
+    int a[n];
+
+    set<int> se;
+
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+        se.insert(a[i]);
+    }
+
+    if(se.find(M) != se.end()) {
+        cout << distance(se.begin(), se.find(M));
+    } else {
+        cout << "khong co";
+    } 
+
+    cout << endl;
+
+    if(se.find(K) != se.end()) {
+
+        cout << distance(se.begin(), se.find(K));
+    } 
+   else {
+        cout << "khong co";
+    }
+}
+
+Bài 4 :
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <algorithm> 
+
+using namespace std ;
+
+int main (){
+    
+    ios_base::sync_with_stdio(false);
+    
+    int N ; 
+    
+    cin >> N ;
+    
+    map <string , int > score ;
+    
+
+    for (int i = 0 ; i < N ; i++){
+        string hoten ;
+        
+        int diem; 
+        
+        cin>>hoten>>diem;
+        
+        score[hoten] = diem ;
+        
+    
+    }
+    
+    int max = 0 ; 
+    
+    for (pair <string ,int> it : score){
+        if (it.second > max){
+            max = it.second ;
+        }
+    }
+    
+    for (pair <string ,int> it :score){
+        if (it.second == max){
+            cout<<it.first<<" co diem cao nhat la:  "<<max <<"\n";
+        }
+    }
+    
+    return 0 ;
+}
+
+Bài 5 :
+#include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <algorithm> 
+
+using namespace std ;
+
+int main (){
+    
+    ios_base::sync_with_stdio(false);
+    
+    int N , K ; 
+    
+    cin >> N >> K ;
+    
+   int arr[N];
+   
+   for (int i=0 ; i < N ; i++){
+       cin>>arr[i];
+   }
+    
+    map <int, int> mp ;
+    
+    for (int i = 0 ; i < N ; i= i+2 ){
+        mp[arr[i]] = arr[i+1];
+    }
+    
+    int count = 0 ; 
+    
+    for (pair <int ,int> it : mp){
+        
+        if (it.first + it.second == K){
+            
+           cout <<"("<<it.first<<","<<it.second<<")"<<"\n";
+         
+           count++;
+        }
+    }
+    
+    if (count ==0 ){
+        cout<<"khong co";
+    }
+    return 0 ;
+}
