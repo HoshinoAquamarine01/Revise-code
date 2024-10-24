@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> a(n);
+
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+
+        unordered_map<long long, int> prefix;
+        long long sum = 0;
+        int result = 0;
+
+        prefix[0] = 1;
+        
+        for (int i = 0; i < n; i++) {
+            sum += a[i]; 
+
+        
+            if (prefix[sum] > 0) {
+                result++;   
+               
+                prefix.clear(); 
+                prefix[0] = 1;  
+                sum = 0;            
+            }
+
+            prefix[sum]++;
+        }
+
+        cout << result << '\n';
+    }
+
+    return 0;
+}
