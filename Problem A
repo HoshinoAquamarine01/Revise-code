@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+    ios_base::sync_with_stdio(false);
+    int n;
+    cin >> n;
+    
+    while (n--) {
+        int t;
+        cin >> t;
+        
+        int move = 0; 
+        bool sakurako = false;
+        
+        for (int i = 0; abs(move) <= t; i++) {
+            if (i % 2 == 0) { 
+                move -= (2 * i + 1); 
+                sakurako = true; 
+            } else { 
+                move += (2 * i + 1); 
+                sakurako = false; 
+            }
+        }
+        
+      
+        cout << (sakurako ? "Sakurako":"Kosuke" ) << '\n';
+    }
+ 
+    return 0;
+}
